@@ -105,6 +105,7 @@ namespace Vuforia
                 component.enabled = false;
             }
 			Text.SetActive (true);
+			rotate.noSound = false;
 
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
         }

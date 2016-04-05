@@ -5,13 +5,15 @@ public class rotate : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject personaje;
+	public GameObject sonido;
+	public static bool noSound;
 
 	private bool derecha;
 	private bool izquierda;
 	void Start () {
 		izquierda = false;
 		derecha = false;
-	
+		noSound = true;
 	}
 	
 	// Update is called once per frame
@@ -21,6 +23,11 @@ public class rotate : MonoBehaviour {
 		}
 		if(izquierda){
 			girarIzquierda();
+		}
+
+		if( !noSound){
+			sonido.GetComponent<AudioSource>().Stop ();
+
 		}
 	}
 
@@ -39,9 +46,14 @@ public class rotate : MonoBehaviour {
 	}
 
 	public  void girarDerecha (){
+		noSound = true;
+		sonido.GetComponent<AudioSource>().Play ();
+
 		personaje.transform.Rotate (new Vector3 (0,-45, 0) * Time.deltaTime* 5);
 	}
 	public  void girarIzquierda (){
+		noSound = true;
+		sonido.GetComponent<AudioSource>().Play ();
 		personaje.transform.Rotate (new Vector3 (0,45, 0) * Time.deltaTime* 5);
 	}
 }
