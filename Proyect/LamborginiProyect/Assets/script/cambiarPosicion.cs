@@ -5,6 +5,7 @@ public class cambiarPosicion : MonoBehaviour {
 
 	public bool inicial=true;
 	public GameObject personaje;
+	public GameObject personaje2;
 
 	// Use this for initialization
 	void Start () {
@@ -21,12 +22,16 @@ public class cambiarPosicion : MonoBehaviour {
 		inicial = !inicial;
 		if (!inicial){
 			personaje.transform.rotation = Quaternion.Euler(-90f, 180f, 0f);
-			personaje.transform.localPosition = new Vector3 (0.0f, 0.38f, -0.4f);
-			
+			personaje.transform.localPosition = new Vector3 (0.0f, 0.38f, -0.1f);
+			personaje2.transform.rotation = Quaternion.Euler(-90f, 180f, 0f);
+			personaje2.transform.localPosition = new Vector3 (0.0f, 0.38f, -0.1f);
 		}
 		if (inicial){
 			personaje.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
 			personaje.transform.localPosition = new Vector3 (0f, 0f, 0f);
+
+			personaje2.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+			personaje2.transform.localPosition = new Vector3 (0f, 0f, 0f);
 			
 		}
 	}
