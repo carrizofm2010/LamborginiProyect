@@ -23,10 +23,9 @@ namespace Vuforia
 
 
         #region UNTIY_MONOBEHAVIOUR_METHODS
-
-		public GameObject Text;
+    
         void Start()
-        {	
+        {
             mTrackableBehaviour = GetComponent<TrackableBehaviour>();
             if (mTrackableBehaviour)
             {
@@ -83,7 +82,7 @@ namespace Vuforia
             {
                 component.enabled = true;
             }
-			Text.SetActive (false);
+
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
         }
 
@@ -104,8 +103,6 @@ namespace Vuforia
             {
                 component.enabled = false;
             }
-			Text.SetActive (true);
-			rotate.noSound = false;
 
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
         }
