@@ -22,9 +22,9 @@ public class cambiarPosicion : MonoBehaviour {
 		inicial = !inicial;
 		if (!inicial){
 			personaje.transform.rotation = Quaternion.Euler(-90f, 180f, 0f);
-			personaje.transform.localPosition = new Vector3 (0.0f, 0.38f, -0.1f);
+			personaje.transform.localPosition = new Vector3 (0.0f, 0.38f, 0.01f);
 			personaje2.transform.rotation = Quaternion.Euler(-90f, 180f, 0f);
-			personaje2.transform.localPosition = new Vector3 (0.0f, 0.38f, -0.1f);
+			personaje2.transform.localPosition = new Vector3 (0.0f, 0.38f, 0.01f);
 		}
 		if (inicial){
 			personaje.transform.rotation = Quaternion.Euler(0f, 180f, 0f);

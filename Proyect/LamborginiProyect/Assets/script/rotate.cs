@@ -7,7 +7,7 @@ public class rotate : MonoBehaviour {
 	public GameObject personaje;
 	public GameObject personaje2;
 
-	public GameObject sonido;
+//	public GameObject sonido;
 //	public GameObject sonido2;
 	public static bool noSound;
 
@@ -28,10 +28,10 @@ public class rotate : MonoBehaviour {
 			girarIzquierda();
 		}
 
-		if( !noSound){
-			sonido.GetComponent<AudioSource>().Stop ();
-
-		}
+//		if( !noSound){
+//			sonido.GetComponent<AudioSource>().Stop ();
+//
+//		}
 	}
 
 	public void rotarDerechaDown(){
@@ -50,7 +50,7 @@ public class rotate : MonoBehaviour {
 
 	public  void girarDerecha (){
 		noSound = true;
-		sonido.GetComponent<AudioSource>().Play ();
+//		sonido.GetComponent<AudioSource>().Play ();
 //		sonido2.GetComponent<AudioSource>().Play ();
 		personaje.transform.Rotate (new Vector3 (0,-45, 0) * Time.deltaTime* 5);
 		personaje2.transform.Rotate (new Vector3 (0,-45, 0) * Time.deltaTime* 5);
@@ -58,7 +58,7 @@ public class rotate : MonoBehaviour {
 	}
 	public  void girarIzquierda (){
 		noSound = true;
-		sonido.GetComponent<AudioSource>().Play ();
+//		sonido.GetComponent<AudioSource>().Play ();
 //		sonido2.GetComponent<AudioSource>().Play ();
 		personaje.transform.Rotate (new Vector3 (0,45, 0) * Time.deltaTime* 5);
 		personaje2.transform.Rotate (new Vector3 (0,45, 0) * Time.deltaTime* 5);
