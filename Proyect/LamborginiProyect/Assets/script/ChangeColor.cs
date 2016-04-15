@@ -1,12 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ChangeColor : MonoBehaviour {
 
-    public Transform CarModel;
-    private enum Chasi { chasisv3, chasis1 ,chasis_0, baul, capo, chasis_externo, parachoque, puerta_1, puertas_2 }
+    public Transform CarModel1;
+    public Transform CarModel2;
+    List<string> elementos = new List<string>();
     void Start()
     {
+        elementos.Add("guardabarro");
+        elementos.Add("chasisv3");
+        elementos.Add("chasis_0");
+        elementos.Add("chasis1x (1)");
+        elementos.Add("chasis0");
+        elementos.Add("cinturon_de_seguridad_2");
+        elementos.Add("soporte_de_asiento");
+        elementos.Add("baul");
+        elementos.Add("capo");
+        elementos.Add("chasis_externo");
+        elementos.Add("parachoque");
+        elementos.Add("puerta_1");
+        elementos.Add("puertas_2");
+        elementos.Add("chasis2");
+        elementos.Add("parte_central_2");
+
         ChangeColorMaterial(Color.red);
     }
     public void ColorRed() {
@@ -26,45 +44,30 @@ public class ChangeColor : MonoBehaviour {
         ChangeColorMaterial(Color.green);
     }
     public void ChangeColorMaterial(Color color) {
-        MeshRenderer[] meshRenderer = CarModel.GetComponentsInChildren<MeshRenderer>(true);
+
+        MeshRenderer[] meshRenderer = CarModel1.GetComponentsInChildren<MeshRenderer>(true);
         foreach (MeshRenderer component in meshRenderer)
         {
-            if (component.name.Equals(Chasi.chasisv3.ToString())) {
-                component.sharedMaterial.color = color;
-            }
-            if (component.name.Equals(Chasi.chasis1.ToString()))
-            {
-                component.sharedMaterial.color = color;
-            }
-            if (component.name.Equals(Chasi.chasis_0.ToString()))
-            {
-                component.sharedMaterial.color = color;
-            }
-            if (component.name.Equals(Chasi.baul.ToString()))
-            {
-                component.sharedMaterial.color = color;
-            }
-            if (component.name.Equals(Chasi.capo.ToString()))
-            {
-                component.sharedMaterial.color = color;
-            }
-            if (component.name.Equals(Chasi.chasis_externo.ToString()))
-            {
-                component.sharedMaterial.color = color;
-            }
-            if (component.name.Equals(Chasi.parachoque.ToString()))
-            {
-                component.sharedMaterial.color = color;
-            }
-            if (component.name.Equals(Chasi.puerta_1.ToString()))
-            {
-                component.sharedMaterial.color = color;
-            }
-            if (component.name.Equals(Chasi.puertas_2.ToString()))
-            {
-                component.sharedMaterial.color = color;
+            for (int i = 0; i < elementos.Count; i++) {
+                if (component.name.Equals(elementos[i]))
+                {
+                    component.sharedMaterial.color = color;
+                }
+
             }
 
+        }
+        MeshRenderer[] meshRenderer2 = CarModel2.GetComponentsInChildren<MeshRenderer>(true);
+        foreach (MeshRenderer component in meshRenderer2)
+        {
+            for (int i = 0; i < elementos.Count; i++)
+            {
+                if (component.name.Equals(elementos[i]))
+                {
+                    component.sharedMaterial.color = color;
+                }
+
+            }
         }
     }
 }

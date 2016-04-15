@@ -9,7 +9,11 @@ public class cambiarPosicion : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        personaje.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        personaje.transform.localPosition = new Vector3(0f, 0f, 0f);
+
+        personaje2.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        personaje2.transform.localPosition = new Vector3(0f, 0f, 0f);
 	}
 	
 	// Update is called once per frame
